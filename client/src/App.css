@@ -55,6 +55,10 @@ Button{
   
 }
 
+.search {
+  font-size: 50%;
+  margin-left: 50%;
+}
 
 .rating {
   margin-top: 5%;
