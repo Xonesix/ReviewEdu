@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './ReviewEd.png'
 import './App.css';
 import { ChakraProvider, Input } from '@chakra-ui/react';
 import { Textarea, Button, Box, HStack, VStack, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react'
@@ -179,6 +179,9 @@ function App() {
   return (
     <ChakraProvider>
         <header className="App-header">
+          <Box p={4}>
+            <img src={logo} alt="Logo" width='5%'/>
+          </Box>
           <br/>
           <HStack>
           <h2> Choose a Professor to Review: </h2>
@@ -202,7 +205,13 @@ function App() {
               </Box>
             ))}
           </VStack> )}
-          <h1> Your Review for {currentProfessor} </h1>
+          {currentProfessor && (
+            <h1> Your Review for {currentProfessor} </h1>
+          )}
+          
+          {!currentProfessor && (
+            <h1> Your Overall UTD Review </h1>
+          )}
           <div className='textarea'>
             <Textarea
               placeholder='Here is a sample placeholder'
@@ -214,7 +223,8 @@ function App() {
           </div>
 
           <Button
-            colorScheme='red'
+            bgColor='#CB4154'
+            color='white'
             size='lg'
             onClick={handleGenerateClick}
           > Generate
@@ -267,7 +277,8 @@ function App() {
         )}
         <br/>
         <Button
-            colorScheme='red'
+            bgColor='#CB4154'
+            color='white'
             size='lg'
             onClick={handleGenerateClick}
           > Post
