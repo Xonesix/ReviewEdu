@@ -1,2 +1,2 @@
 # ReviewEdu
-- I worked on the AI models listed 
+- I developed the tags_model.py using BERT
